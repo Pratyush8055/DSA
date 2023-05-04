@@ -1,23 +1,23 @@
 #include <stdio.h>
-int fib(int n)
+int fact(int x);
+int main()
 {
-    if(n==0)
-    return 0;
-    else if(n==1)
-    return 1;
-    else 
-    return fib(n-1)+fib(n-2);
-}
-int main() {
-    int n;
+    int x,res=0;
     printf("\nEnter a number ");
-    scanf("%d",&n);
-    if(n>0)
-    printf("\nfactorial not possible");
+    scanf("%d",&x);
+    if(x<0)
+    printf("\nFactorial does not exit");
     else
-    for(int i=0;i<n;i++)
     {
-    printf("%d", fib(i));
+        res=fact(x);
+         printf("\nFactorial of the number is %d",res);
     }
-    return 0;
+   
+}
+int fact(int x)
+{
+    if(x==0)
+    return 1;
+    else
+    return x*fact(x-1);
 }
